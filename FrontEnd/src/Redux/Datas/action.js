@@ -5,7 +5,10 @@ import axios from "axios";
 export const CreateReport = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.CREATE_REPORT_REQUEST });
-    const res = await axios.post("http://localhost:8080/reports/create", data);
+    const res = await axios.post(
+      "https://e-health-care-backand.onrender.com/reports/create",
+      data
+    );
     console.log(res);
     return res.data;
     // dispatch({
@@ -29,7 +32,7 @@ export const GetDoctorDetails = () => async (dispatch) => {
   try {
     dispatch({ type: types.GET_DOCTOR_REQUEST });
     const res = await axios.get(
-      "https://zany-gray-clam-gear.cyclic.app/doctors"
+      "https://e-health-care-backand.onrender.com/doctors"
     );
     console.log(res);
     // dispatch({
@@ -53,7 +56,7 @@ export const AddPatients = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.ADD_PATIENT_REQUEST });
     const res = await axios.post(
-      "http://localhost:8080/patients/register",
+      "https://e-health-care-backand.onrender.com/patients/register",
       data
     );
     return res.data;
@@ -77,7 +80,10 @@ export const AddPatients = (data) => async (dispatch) => {
 export const CreateBeds = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.ADD_BED_REQUEST });
-    const res = await axios.post("http://localhost:8080/beds/add", data);
+    const res = await axios.post(
+      "https://e-health-care-backand.onrender.com/beds/add",
+      data
+    );
     return res.data;
     // dispatch({
     //   type: types.ADD_BED_SUCCESS,
@@ -100,7 +106,7 @@ export const CreatePayment = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.CREATE_PAYMENT_REQUEST });
     const res = await axios.post(
-      "https://zany-gray-clam-gear.cyclic.app/payments/add",
+      "https://e-health-care-backand.onrender.com/payments/add",
       data
     );
     console.log(res.data);
@@ -124,7 +130,9 @@ export const CreatePayment = (data) => async (dispatch) => {
 export const GetBeds = () => async (dispatch) => {
   try {
     dispatch({ type: types.GET_BED_REQUEST });
-    const res = await axios.get("http://localhost:8080/beds");
+    const res = await axios.get(
+      "https://e-health-care-backand.onrender.com/beds"
+    );
     // console.log(res);
     dispatch({
       type: types.GET_BED_SUCCESS,
@@ -145,7 +153,7 @@ export const CreateBooking = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.CREATE_BOOKING_REQUEST });
     const res = await axios.post(
-      `http://localhost:8080/appointments/create`,
+      `https://e-health-care-backand.onrender.com/appointments/create`,
       data
     );
     console.log(res);
@@ -162,7 +170,10 @@ export const CreateBooking = (data) => async (dispatch) => {
 export const AddBed = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.ADD_BEDS_REQUEST });
-    const res = await axios.post("http://localhost:8080/beds/add", data);
+    const res = await axios.post(
+      "https://e-health-care-backand.onrender.com/beds/add",
+      data
+    );
     console.log(res);
     // dispatch({
     //   type: types.ADD_BEDS_SUCCESS,
@@ -185,7 +196,10 @@ export const AddBed = (data) => async (dispatch) => {
 export const GetSingleBed = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.GET_SINGLE_BEDS_REQUEST });
-    const res = await axios.post("http://localhost:8080/beds/single", data);
+    const res = await axios.post(
+      "https://e-health-care-backand.onrender.com/beds/single",
+      data
+    );
     // console.log(res);
     return res.data;
     // dispatch({
@@ -209,7 +223,10 @@ export const GetSingleBed = (data) => async (dispatch) => {
 export const EditSingleBed = (data, id) => async (dispatch) => {
   try {
     dispatch({ type: types.GET_SINGLE_BEDS_REQUEST });
-    const res = await axios.patch(`http://localhost:8080/beds/${id}`, data);
+    const res = await axios.patch(
+      `https://e-health-care-backand.onrender.com/beds/${id}`,
+      data
+    );
     // console.log(res);
     return res.data;
     // dispatch({
@@ -233,7 +250,10 @@ export const EditSingleBed = (data, id) => async (dispatch) => {
 export const dischargePatient = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.DISCHARGE_PATIENT_REQUEST });
-    const res = await axios.put(`http://localhost:8080/beds/discharge`, data);
+    const res = await axios.put(
+      `https://e-health-care-backand.onrender.com/beds/discharge`,
+      data
+    );
     console.log(res);
     // return res.data;
     dispatch({
@@ -257,7 +277,9 @@ export const dischargePatient = (data) => async (dispatch) => {
 export const GetPatients = () => async (dispatch) => {
   try {
     dispatch({ type: types.GET_PATIENT_REQUEST });
-    const res = await axios.get(`http://localhost:8080/patients`);
+    const res = await axios.get(
+      `https://e-health-care-backand.onrender.com/patients`
+    );
     // console.log(res.data);
     dispatch({
       type: types.GET_PATIENT_SUCCESS,
@@ -272,7 +294,9 @@ export const GetPatients = () => async (dispatch) => {
 export const GetAllData = () => async (dispatch) => {
   try {
     dispatch({ type: types.GET_ALLDATA_REQUEST });
-    const res = await axios.get(`http://localhost:8080/hospitals`);
+    const res = await axios.get(
+      `https://e-health-care-backand.onrender.com/hospitals`
+    );
     // console.log(res.data);
     dispatch({
       type: types.GET_ALLDATA_SUCCESS,
@@ -287,7 +311,9 @@ export const GetAllData = () => async (dispatch) => {
 export const GetAllAppointment = () => async (dispatch) => {
   try {
     dispatch({ type: types.GET_APPOINTMENT_DETAILS_REQUEST });
-    const res = await axios.get(`http://localhost:8080/appointments`);
+    const res = await axios.get(
+      `https://e-health-care-backand.onrender.com/appointments`
+    );
     // console.log(res.data);
     // return res.data;
     dispatch({
@@ -303,7 +329,9 @@ export const GetAllAppointment = () => async (dispatch) => {
 export const DeleteAppointment = (id) => async (dispatch) => {
   try {
     dispatch({ type: types.DELETE_APPOINTMENT_REQUEST });
-    const res = await axios.delete(`http://localhost:8080/appointments/${id}`);
+    const res = await axios.delete(
+      `https://e-health-care-backand.onrender.com/appointments/${id}`
+    );
     console.log(res.data);
     // return res.data;
     dispatch({
@@ -319,7 +347,9 @@ export const DeleteAppointment = (id) => async (dispatch) => {
 export const GetAllReports = () => async (dispatch) => {
   try {
     dispatch({ type: types.GET_REPORTS_REQUEST });
-    const res = await axios.get(`http://localhost:8080/reports`);
+    const res = await axios.get(
+      `https://e-health-care-backand.onrender.com/reports`
+    );
     // console.log(res.data);
     return res.data;
     // dispatch({

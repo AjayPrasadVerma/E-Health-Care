@@ -5,7 +5,10 @@ import axios from "axios";
 export const NurseLogin = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.LOGIN_NURSE_REQUEST });
-    const res = await axios.post("http://localhost:8080/nurses/login", data);
+    const res = await axios.post(
+      "https://e-health-care-backand.onrender.com/nurses/login",
+      data
+    );
     dispatch({
       type: types.LOGIN_NURSE_SUCCESS,
       payload: {
@@ -29,7 +32,10 @@ export const NurseLogin = (data) => async (dispatch) => {
 export const DoctorLogin = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.LOGIN_DOCTOR_REQUEST });
-    const res = await axios.post("http://localhost:8080/doctors/login", data);
+    const res = await axios.post(
+      "https://e-health-care-backand.onrender.com/doctors/login",
+      data
+    );
     // console.log(res.data);
     dispatch({
       type: types.LOGIN_DOCTOR_SUCCESS,
@@ -54,7 +60,10 @@ export const DoctorLogin = (data) => async (dispatch) => {
 export const AdminLogin = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.LOGIN_ADMIN_REQUEST });
-    const res = await axios.post("http://localhost:8080/admin/login", data);
+    const res = await axios.post(
+      "https://e-health-care-backand.onrender.com/admin/login",
+      data
+    );
     // console.log(res.data);
     dispatch({
       type: types.LOGIN_ADMIN_SUCCESS,
@@ -80,7 +89,7 @@ export const DoctorRegister = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.REGISTER_DOCTOR_REQUEST });
     const res = await axios.post(
-      "http://localhost:8080/doctors/register",
+      "https://e-health-care-backand.onrender.com/doctors/register",
       data
     );
     // console.log(res);
@@ -108,7 +117,10 @@ export const DoctorRegister = (data) => async (dispatch) => {
 export const NurseRegister = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.REGISTER_NURSE_REQUEST });
-    const res = await axios.post("http://localhost:8080/nurses/register", data);
+    const res = await axios.post(
+      "https://e-health-care-backand.onrender.com/nurses/register",
+      data
+    );
     // console.log(res);
     return res.data;
     // dispatch({
@@ -134,7 +146,10 @@ export const NurseRegister = (data) => async (dispatch) => {
 export const AdminRegister = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.REGISTER_ADMIN_REQUEST });
-    const res = await axios.post("http://localhost:8080/admin/register", data);
+    const res = await axios.post(
+      "https://e-health-care-backand.onrender.com/admin/register",
+      data
+    );
     // console.log(res);
     return res.data;
     // dispatch({
@@ -160,7 +175,10 @@ export const AdminRegister = (data) => async (dispatch) => {
 export const AmbulanceRegister = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.REGISTER_AMBULANCE_REQUEST });
-    const res = await axios.post("http://localhost:8080/ambulances/add", data);
+    const res = await axios.post(
+      "https://e-health-care-backand.onrender.com/ambulances/add",
+      data
+    );
     console.log(res);
     // dispatch({
     //   type: types.REGISTER_AMBULANCE_SUCCESS,
@@ -196,7 +214,10 @@ export const authLogout = () => async (dispatch) => {
 export const UpdateNurse = (data, id) => async (dispatch) => {
   try {
     dispatch({ type: types.EDIT_NURSE_REQUEST });
-    const res = await axios.patch(`http://localhost:8080/nurses/${id}`, data);
+    const res = await axios.patch(
+      `https://e-health-care-backand.onrender.com/nurses/${id}`,
+      data
+    );
     console.log(res);
     dispatch({ type: types.EDIT_NURSE_SUCCESS, payload: res.data.user });
   } catch (error) {
@@ -208,7 +229,10 @@ export const UpdateNurse = (data, id) => async (dispatch) => {
 export const UpdateDoctor = (data, id) => async (dispatch) => {
   try {
     dispatch({ type: types.EDIT_DOCTOR_REQUEST });
-    const res = await axios.patch(`http://localhost:8080/doctors/${id}`, data);
+    const res = await axios.patch(
+      `https://e-health-care-backand.onrender.com/doctors/${id}`,
+      data
+    );
     console.log(res);
     dispatch({ type: types.EDIT_DOCTOR_SUCCESS, payload: res.data.user });
   } catch (error) {
@@ -220,7 +244,10 @@ export const UpdateDoctor = (data, id) => async (dispatch) => {
 export const SendPassword = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.EDIT_DOCTOR_REQUEST });
-    const res = await axios.post(`http://localhost:8080/admin/password`, data);
+    const res = await axios.post(
+      `https://e-health-care-backand.onrender.com/admin/password`,
+      data
+    );
     // console.log(res);
     return res.data;
   } catch (error) {
@@ -232,7 +259,10 @@ export const SendPassword = (data) => async (dispatch) => {
 export const forgetPassword = (data) => async (dispatch) => {
   try {
     dispatch({ type: types.FORGET_PASSWORD_REQUEST });
-    const res = await axios.post(`http://localhost:8080/admin/forgot`, data);
+    const res = await axios.post(
+      `https://e-health-care-backand.onrender.com/admin/forgot`,
+      data
+    );
     // console.log(res);
     return res.data;
   } catch (error) {
