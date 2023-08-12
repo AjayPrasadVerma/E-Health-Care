@@ -7,7 +7,7 @@ import AddAmbulance from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/Add_A
 import AddDoctor from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/Add_Doctor";
 import AddNurse from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/Add_Nurse";
 import BedsRooms from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/Beds_Rooms";
-// import CheckPayment from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/Check_Payment";
+import CheckPayment from "../Pages/Dashboard/Main-Dashboard/AllPages/Admin/Check_Payment";
 import AllReport from "../Pages/Dashboard/Main-Dashboard/AllPages/Doctor/AllReport";
 import CheckAppointment from "../Pages/Dashboard/Main-Dashboard/AllPages/Doctor/Check_Appointment";
 import DischargeAndCreateSlip from "../Pages/Dashboard/Main-Dashboard/AllPages/Doctor/Discharge_and_Create_Slip";
@@ -29,6 +29,7 @@ const AllRoutes = () => {
         <Route path="/rooms" element={<BedsRooms />} />
         <Route path="/admin" element={<AddAdmin />} />
         <Route path="/addbeds" element={<AddBeds />} />
+        <Route path="/payment" element={<CheckPayment />} />
         ******************** Doctor Part *************************
         <Route path="/reports" element={<AllReport />} />
         <Route path="/checkappointment" element={<CheckAppointment />} />

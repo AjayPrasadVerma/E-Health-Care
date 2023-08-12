@@ -157,8 +157,9 @@ router.post("/forgot", async (req, res) => {
   const mailOptions = {
     from: "apv957@gmail.com",
     to: email,
-    subject: "Account ID and Password",
+    subject: "Your Account Information",
     text: `This is your User Id : ${userId} and  Password : ${password} .`,
+    text: `Dear User,\n\nWe are excited to welcome you to our platform!\n\nHere are your account details:\n\nUser ID: ${userId}\nPassword: ${password}\n\nPlease keep these credentials secure and do not share them with anyone. If you have any questions or concerns, feel free to contact our support team.\n\nThank you,\nThe E-Health Care System Team`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
